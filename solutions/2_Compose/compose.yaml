@@ -1,0 +1,16 @@
+volumes:
+  data:
+
+services:
+  redis:
+    image: redis:latest
+    volumes:
+      - data:/data
+    ports:
+      - 6379:6379
+  myapp:
+    build: .
+    environment:
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - 8080:8080
