@@ -1,4 +1,4 @@
-# Exercise 3: Building your first Pod
+# Exercise 4: Building your first Pod
 
 Kubernetes Time! We now want to deploy our previously built image to Kubernetes.
 

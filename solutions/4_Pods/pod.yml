@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: training-app-container
-    image: missalt/training:1
+    image: missalt/training:0.3
     ports:
     - containerPort: 8080

@@ -16,6 +16,12 @@ spec:
     spec:
       containers:
       - name: training-app-container
-        image: missalt/training:1
+        image: missalt/training:0.3
         ports:
         - containerPort: 8080
+        env:
+        - name: REDIS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config
+              key: REDIS_URL

@@ -1,4 +1,4 @@
-# Exercise 2: Building Multi-Container Apps using Compose
+# Exercise 3: Building Multi-Container Apps using Compose
 
 In this task, we want to combine everything of what we've learned previously to create an environment that's a *little* more complicated. 
 
@@ -8,9 +8,14 @@ Our previously built image also has the ability to connect to a Redis-Database u
 Our goal is to create a Docker-Compose file which includes the following: 
 - A Redis-DB (using the redis image and the service-name redis), which listens on Port 6379
 - A volume for the Redis-DB, which is mapped to the Redis containers /data path
-- Our application, which should be available on localhost Port 8080
+- Our application, which should be available on localhost Port 8080 and be built automatically from our Dockerfile
 - The above mentioned REDIS_URL environment variable set to: "redis://<redis_service_name>:<redis_port>"
 
 ## Running and testing the file
 
 To confirm that your file is working, run *docker compose up* and add some Key-Value-Pairs after opening the Website. Then, kill the compose-environment using *docker compose down* and restart it again. Your added data should still be displayed.
+
+## Bonus Points
+
+In this repository, you will notice there is also a directory called /images/ which contains a cat.
+Try mounting this directory to the directory /app/images/ in your container and see what happens after you restart your environment.

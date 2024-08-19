@@ -1,4 +1,4 @@
-# Exercise 4: Creating a deployment
+# Exercise 6: Creating a deployment
 
 Our app is quickly rising in popularity, and a single Pod won't cut the increasing load! Thus, we want to create multiple Replicas of our application. 
 

@@ -90,14 +90,19 @@ class HelloWorldHandler(SimpleHTTPRequestHandler):
             <p>Kubernetes Pod Name: {kubernetes_pod_name}</p>
         """
 
-        # Check for image files in the specified directory
-        image_files = [f for f in os.listdir(IMAGE_DIRECTORY) if f.endswith(('.jpg', '.png'))]
+        # Check for image files in the specified directory, handling errors gracefully
+        try:
+            if os.path.exists(IMAGE_DIRECTORY):
+                image_files = [f for f in os.listdir(IMAGE_DIRECTORY) if f.endswith(('.jpg', '.png'))]
 
-        # If an image file is found, add it to the HTML content
-        if image_files:
-            image_file = image_files[0]  # Take the first image file found
-            image_path = f"/images/{image_file}"
-            html_content += f'<img src="{image_path}" alt="Image" style="max-width: 100%; height: auto;">'
+                # If an image file is found, add it to the HTML content
+                if image_files:
+                    image_file = image_files[0]  # Take the first image file found
+                    image_path = f"/images/{image_file}"
+                    html_content += f'<img src="{image_path}" alt="Image" style="max-width: 100%; height: auto;">'
+        except Exception as e:
+            # Log any unexpected errors (optional)
+            print(f"Error checking images: {e}", flush=True)
 
         # Only include Redis-related content if connected
         if redis_connected:
