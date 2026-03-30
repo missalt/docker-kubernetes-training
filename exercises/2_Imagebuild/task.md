@@ -2,6 +2,14 @@
 
 In this task, your goal is to create a Container Image using Docker and push it to DockerHub for later use.
 
+## Preparation
+
+Install Git on your machine: 
+- winget install --id Git.Git -e --source winget
+
+Clone this repository:
+- git clone https://github.com/missalt/docker-kubernetes-training.git
+
 ## Creating your Image 
 
 Our goal is to package the Python-Code in the /src-Directory into a Container. Create a Dockerfile that achieves this in the Root-Directory (/) of this Repository. Remember to install the requirements: This can be done by executing the command *pip install --no-cache-dir -r requirements.txt* in the container.
@@ -10,7 +18,7 @@ Then, run the Image locally using *docker run -d -p 8080:8080 <image_name>* and 
 
 If you succeeded in this task you should be greeted by a "Hello, World!" message.
 
-## Publishing your Image
+## (Optional) Publishing your Image
 
 While your newly created Image can be used from local storage using Docker, using it in Kubernetes Clusters (including minikube) requires you to publish it to a public or private repository. To achieve this, create a Docker Account (or ask your instructor for credentials if you don't want to), Login and navigate to "Repositories" -> "Create repository".
 
