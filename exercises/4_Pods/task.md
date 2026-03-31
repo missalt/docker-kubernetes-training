@@ -33,4 +33,4 @@ This command, if configured correctly, should make it possible for you to access
 
 ## Notes regarding this task
 
-You may think that using *imperative* commands like port-forward goes against the core principles and Kubernetes and is also not a solution to more complex problems, like port-forwardings based on HTTP Hosts (e.g. amazon.com/cart goes to Pod 1, amazon.com/payment goes to Pod 2). If you do, you're absolutely right! Port-forward is great and for testing simple applications, but accessing apps from outside the Cluster is typically done using Ingress. We will talk about this at the end of the Kubernetes Networking section.
+You may think that using *imperative* commands like port-forward goes against the core principles and Kubernetes and is also not a solution to more complex problems, like routing based on HTTP Hosts (e.g. amazon.com/cart goes to Pod 1, amazon.com/payment goes to Pod 2). If you do, you're absolutely right! Port-forward is great for testing simple applications, but accessing apps from outside the Cluster is typically done using Ingress. We will talk about this at the end of the Kubernetes Networking section.
