@@ -6,6 +6,8 @@ In this task, your goal is to create a Container Image using Docker and push it 
 
 Install Git on your machine: 
 - winget install --id Git.Git -e --source winget
+- Restart PowerShell
+- cd C:\Users\Teilnehmer
 
 Clone this repository:
 - git clone https://github.com/missalt/docker-kubernetes-training.git
