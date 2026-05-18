@@ -12,24 +12,19 @@ After some time, your cluster will have been created and you can now access it u
 
 Try *kubectl get pods -A* to verify everything is working. You should see some kube-system Pods, which should include some Kubernetes Components which are now known to you.
 
-ONLY IF WE DIDN'T PUBLISH THE IMAGE EARLIER: To use our Image in the following task, do the following: 
-
-1. Execute "eval $(minikube docker-env)" if you're on Linux or "minikube docker-env | Invoke-Expression" on Windows
-2. Use the docker build command from Exercise 2 again. This time, docker will build the Image in our minikube-Cluster.
-
 
 ## The Task 
 
-Your next task is relatively simple! Create a pod.yaml-File which defines a container using our image. Then, *apply* that Pod-definition to your Kubernetes Cluster and see what happens: 
+Your next task is relatively simple! Open DockerHub and search for the image "missalt/training". Go on Tags and look for the latest one. Create a pod.yaml-File which defines a container using this image. Then, *apply* that Pod-definition to your Kubernetes Cluster and see what happens: 
 
 *kubectl get pods* should now show your newly created Pod in the "Running" state.
 
-To verify that this Pod is, in fact, running the same Image as before, you can't just open localhost as before. This is due to the fact that minikube, or any Kubernetes-Cluster essentially creates an extra "layer" around our Container, networking-wise. Thus, we can't just access the Containers bridge network. Instead, we need to create some kind of networking route inside the cluster which allows us to access our containers from outside it. 
+To verify that this Pod is running, we need to create some kind of networking route inside the cluster which allows us to access our containers from outside it. 
 The simplest way to achieve this is to create a *port-forwarding* using kubectl, which maps a localhost port to some Pod in the Cluster: 
 
 *kubectl port-forward pod/<pod_name> <localhost_port>:<container_port>*
 
-This command, if configured correctly, should make it possible for you to access your Pod via localhost.
+This command, if configured correctly, should make it possible for you to access your Pod via localhost. Note that this is not possible on Cloud-Based-Clusters!
 
 ## Notes regarding this task
 
