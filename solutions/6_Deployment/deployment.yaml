@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: training-app-container
-        image: missalt/training:0.3
+        image: missalt/training:3
         ports:
         - containerPort: 8080

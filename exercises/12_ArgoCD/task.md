@@ -4,7 +4,7 @@ Finally, let's roll out our Application using a GitOps-Tool called ArgoCD. GitOp
 
 ## Preparation
 
-First, we need to roll out ArgoCD. You can check the general instructions for Linux / Mac here, but we will use our own, since we are on Windows:
+First, we need to roll out ArgoCD. 
 
 You have to execute the following: 
 
@@ -17,6 +17,7 @@ You have to execute the following:
 Now, you can open http://localhost:8080 and login to ArgoCD using the "admin" user and the output from step 4 as your password!
 
 Also, uninstall your "old" Helm-Chart using *helm uninstall <chart_name>*
+
 ## Task
 
 Add a new Application to ArgoCD using the "New App" Button in the Top Left Corner.

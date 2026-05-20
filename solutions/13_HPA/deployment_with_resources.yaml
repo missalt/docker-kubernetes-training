@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: training-app
+  labels:
+    app: training
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: training
+  template:
+    metadata:
+      labels:
+        app: training
+    spec:
+      containers:
+      - name: training-app-container
+        image: missalt/training:0.3
+        ports:
+        - containerPort: 8080
+        env:
+        - name: REDIS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config
+              key: REDIS_URL
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "300m"

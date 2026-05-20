@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: training-app-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
   - host: kubernetestraining.com
