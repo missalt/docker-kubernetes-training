@@ -4,13 +4,9 @@ In this task, your goal is to create a Container Image using Docker and push it 
 
 ## Preparation
 
-Install Git on your machine: 
-- winget install --id Git.Git -e --source winget
-- Restart PowerShell
-- cd C:\Users\Teilnehmer
-
-Clone this repository:
-- git clone https://github.com/missalt/docker-kubernetes-training.git
+1. In the same shell that you just ran the "docker" commands in: *cd .\Users\Teilnehmer*
+2. Clone this repository: *git clone https://github.com/missalt/docker-kubernetes-training.git*
+3. Open up this repository in your Visual Studio Code Instance: Click on "File" -> Open Folder... -> docker-kubernetes-training
 
 ## Creating your Image 
 
