@@ -6,7 +6,7 @@ Now, we want to create a Persistent Volume Claim and a Deployment for redis.
 ## Task 
 
 1. Create a PVC which requests 1GB of Storage. Set the AccessMode in such a way that only 1 Pod can access it at a time. Use dynamic provisioning (in minikube, this is done by not including any storageClass).
-2. Fill in the blanks in the given Deployment-File.
+2. Fill in the blanks in the given Deployment-File. (mountPath should be /data)
 3. Deploy everything to our Cluster.
 
 
